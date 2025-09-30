@@ -1,0 +1,34 @@
+<?php
+// week02/header.php
+$current = basename($_SERVER['PHP_SELF']);
+function nav_active($file) {
+    global $current;
+    return $current === $file ? ' active' : '';
+}
+?>
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo isset($title) ? $title : '我的網站'; ?></title>
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f4f6fb; }
+        header { background: #2d3e50; color: #fff; padding: 1.5rem 2rem; }
+        nav { margin-top: 1rem; }
+        nav a { color: #fff; text-decoration: none; margin-right: 1.5rem; font-weight: 500; }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 2rem; }
+        .card { background: #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); padding: 2rem; max-width: 600px; margin: 2rem auto; }
+        footer { text-align: center; color: #888; padding: 1rem 0; background: #eaeaea; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><?php echo isset($header_title) ? $header_title : '關於我們'; ?></h1>
+        <nav>
+            <a href="index.php">首頁</a>
+            <a href="about.php">關於我們</a>
+            <a href="contact.php">聯絡</a>
+        </nav>
+    </header>
